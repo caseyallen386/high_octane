@@ -1,0 +1,165 @@
+/* CSS Document */
+
+/**
+header A4 CSS responsive and desktop layout
+------------------------------------------------**/
+
+.site-header {
+	height: 350px;
+	border-top:32px solid #333;
+	background-image: url('background-image.jpg');
+	background-size: 1900px;
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+
+.site-header .title-area {
+	position: absolute !important;
+	z-index:955;
+	margin: 25px 0px 20px 72px;
+}
+
+.site-header .title-area .site-title > a {
+	position: relative;
+	z-index:10000;
+}
+
+.title-wrap {	
+	z-index:950;
+	padding-left:11.5%;
+	height: 300px;
+	width: 60%;
+	background-color: #fff;
+	-webkit-clip-path: polygon(0 0, 100% 0, 82.74336283185841% 525%, 0 255.79646%);
+  	clip-path: polygon(0 0, 100% 0, 82.74336283185841% 525%, 0 255.79646%);
+}
+
+.site-header .widget-area {
+	position: absolute;
+}
+
+.site-header .title-area {
+	width: 200px !important;
+	height: 115px !important;
+}
+
+.site-header .widget-area.header-widget-area .widget-text {
+	float: left;
+	padding-top:140px;
+	width: 350px;
+	text-align: center;
+}
+
+.nav-primary {
+	background-color: #333;
+	color: #FFF;
+	float: right;
+	width: 100%;
+	position: relative;
+	text-align: right;
+	margin-top:255px;
+}
+
+.genesis-nav-menu {
+	text-align: right;
+}
+
+@media(max-width:1452px) {
+	
+	.title-wrap {
+		padding-left: 5%;
+	}
+	
+}
+
+@media(max-width:1264px) {
+	
+	.title-wrap {
+		padding-left:15px;
+	}
+	
+}
+
+@media(max-width: 1192px) {
+	
+	.site-header {
+		background-image: none;
+		background-color: #FFF;
+	}
+	
+	.title-wrap {
+		width: 390px;
+		height: 305px;
+		margin-left: auto;
+		margin-right: auto;
+		-webkit-clip-path: none;
+		clip-path: none;
+		background-color: transparent;
+	}
+	
+	.site-header .title-area {
+		padding:0px 0px 10px 0px;
+	}
+	
+	.nav-primary {
+		margin-top: 305px;
+		text-align: center;
+	}
+	
+	.nav-primary .genesis-nav-menu {
+		text-align: center;
+	}
+	
+}
+
+@media(max-width:1024px) {
+	
+	.site-header .wrap {
+		padding: 0px !important;
+	}
+	
+	.site-header .responsive-menu-icon {
+		padding: 10px 0px;
+	}
+	
+	.responsive-menu-icon:before {
+		color: #FFF;
+		vertical-align: middle;
+	}
+	
+	.responsive-menu-icon:after {
+		content:'MENU';
+	}
+	
+}
+
+@media(max-width: 480px) {
+	.title-wrap {
+		width: 100%;
+		padding-left: 5%;
+	}
+}
+
+@media(max-width:390px) {
+	.title-wrap {
+		width: 300px;
+		padding-left: 0;
+	}
+	
+	.site-header {
+		height: 375px;
+	}
+	
+	.site-header .nav-primary {
+		margin-top:343px;
+	}
+	
+	.site-header .title-area {
+		margin: 25px 0px 20px 43px;
+	}
+	
+	.site-header .widget-area.header-widget-area .widget-text {
+		width: 295px;
+	}
+	
+}

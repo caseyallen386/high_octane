@@ -1,0 +1,108 @@
+
+.responsive-menu-icon {
+    cursor: pointer;
+    display: none;
+    margin-bottom: -1px;
+    text-align: center;
+}
+
+.responsive-menu-icon::before {
+    color: #252525;
+    content: "\f333";
+    display: inline-block;
+    font: normal 20px/1 'dashicons';
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+.site-header .responsive-menu-icon::before {
+    padding: 0;
+}
+
+.a2-topbar {
+    background-color: #1873a2;
+    color: #fff;
+    height: 35px;
+	display: none;
+}
+
+.a2-topbar .nav-secondary {
+    float: right;
+    max-width: 50%;
+    background-color: transparent;
+}
+
+.nav-secondary .genesis-nav-menu a {
+    padding: 10px 24px;
+    color: #fff;
+}
+
+.a2-topbar .a2-left-widget {
+    float: left;
+    max-width: 50%;
+}
+
+.site-header {
+	background-color: #fff;
+}
+
+.site-header .widget-area {
+	float: right;
+}
+
+.site-header .title-area {
+    margin: 0;
+}
+
+.site-header .title-area a{
+	background: url(/wp-content/uploads/2014/04/alltradestemp.png) no-repeat center center;
+	background-size: contain;
+	width: 241px;
+	height: 100px;
+	color: transparent;
+	display: block;
+}
+
+.site-header .title-area a:hover {
+	color: transparent;
+	text-decoration: none;
+}
+
+
+/* ## Primary Navigation
+--------------------------------------------- */
+
+
+.nav-primary {
+    background-color: #045f34;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-primary .genesis-nav-menu a {
+    font-size: 17px;
+	font-size: 1.7rem;
+	font-weight: 400;
+	color: #fff;
+	padding: 13px 24px;
+	text-transform: uppercase;
+}
+
+.nav-primary .genesis-nav-menu a:hover,
+.nav-primary .genesis-nav-menu a:focus,
+.nav-primary .genesis-nav-menu .current-menu-item > a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.nav-primary .genesis-nav-menu .sub-menu a {
+	color: #045f34;
+}
+
+.nav-primary .genesis-nav-menu .sub-menu a:hover,
+.nav-primary .genesis-nav-menu .sub-menu a:focus,
+.nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a {
+	color: #fff;
+	background-color: #045f34;
+}

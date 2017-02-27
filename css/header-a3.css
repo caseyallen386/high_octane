@@ -1,0 +1,60 @@
+.responsive-menu-icon {
+    cursor: pointer;
+    display: none;
+    margin-bottom: -1px;
+    text-align: center;
+}
+
+.responsive-menu-icon::before {
+    color: #252525;
+    content: "\f333";
+    display: inline-block;
+    font: normal 20px/1 'dashicons';
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+.site-header .responsive-menu-icon::before {
+    padding: 0;
+}
+
+.a3-topbar {
+    background-color: #1873a2;
+    color: #fff;
+    height: 35px;
+}
+
+.a3-topbar .nav-secondary {
+    float: right;
+    max-width: 50%;
+    background-color: transparent;
+}
+
+.nav-secondary .genesis-nav-menu a {
+    padding: 10px 24px;
+    color: #fff;
+}
+
+.a3-topbar .a1-left-widget {
+    float: left;
+    max-width: 50%;
+}
+
+.site-header .title-area {
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+}
+
+.site-header .nav-primary {
+    
+    background-color: transparent;
+    padding: 0;
+    
+    text-align: center;
+}
+
+.nav-primary .genesis-nav-menu a {
+    font-size: 16px;
+}
