@@ -112,7 +112,7 @@ function a1_header() {
 
     function a1_header_topbar() {
 
-        $styles = str_replace( array("\n", "\r"), '', file_get_contents( dirname(__file__). '/css/header-a1.css') ) ;
+        $styles = str_replace( array("\n", "\r"), '', file_get_contents( get_stylesheet_directory(). '/css/header-a1.css') ) ;
         printf('<style>%s</style>', $styles);
         ?>
             <div class="a1-topbar">
@@ -156,7 +156,7 @@ function a2_header() {
 
     function a2_header_topbar() {
 
-        $styles = str_replace( array("\n", "\r"), '', file_get_contents( dirname(__file__). '/css/header-a2.css') ) ;
+        $styles = str_replace( array("\n", "\r"), '', file_get_contents( get_stylesheet_directory(). '/css/header-a2.css') ) ;
         printf('<style>%s</style>', $styles);
         ?>
             <div class="a2-topbar">
@@ -197,7 +197,7 @@ function a3_header() {
 
     function a3_header_topbar() {
 
-        $styles = str_replace( array("\n", "\r"), '', file_get_contents( dirname(__file__). '/css/header-a3.css') ) ;
+        $styles = str_replace( array("\n", "\r"), '', file_get_contents( get_stylesheet_directory(). '/css/header-a3.css') ) ;
         printf('<style>%s</style>', $styles);
         ?>
             <div class="a3-topbar">
@@ -234,7 +234,7 @@ function a4_header() {
 
 	function a4_header_styles() {
 
-        $styles = str_replace( array("\n", "\r", "\t", "  "), '', file_get_contents( dirname(__file__). '/css/header-a4.css') ) ;
+        $styles = str_replace( array("\n", "\r", "\t", "  "), '', file_get_contents( get_stylesheet_directory(). '/css/header-a4.css') ) ;
         printf('<style>%s</style>', $styles);
 
     }
