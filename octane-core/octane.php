@@ -18,13 +18,11 @@ class High_Octane {
     add_action( 'after_setup_theme', array( $this ,'octane_setup' ) );
     add_action( 'widgets_init', array( $this, 'octane_widgets_init' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'octane_scripts' ) );
-
+    add_action( 'wp_head', 'octane_custom_header_style' );
 
     //filters
     add_filter( 'script_loader_src', array( $this, '_remove_script_version' ), 15, 1 );
     add_filter( 'style_loader_src', array( $this, '_remove_script_version' ), 15, 1 );
-
-
 
   }
 
@@ -101,7 +99,7 @@ class High_Octane {
           'header-selector' => '.site-title a',
           'header-text'     => false,
           'height'          => 111,
-          'width'           => 340,
+          'width'           => 340
       ) );
 
 //* Add support for custom background
@@ -138,6 +136,7 @@ class High_Octane {
       remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
       remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
       remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+      remove_action( 'wp_head', 'genesis_custom_header_style' );
   }
 
   function getBusinessPhone() {
@@ -173,5 +172,45 @@ class High_Octane {
       wp_enqueue_style( 'octane-styles', get_stylesheet_directory_uri() . '/style.css', array(), CHILD_THEME_VERSION );
 
   }
+
+  function octane_custom_header_style() {
+
+	// Do nothing if custom header not supported.
+	if ( ! current_theme_supports( 'custom-header' ) )
+		return;
+
+	// Do nothing if user specifies their own callback.
+	if ( get_theme_support( 'custom-header', 'wp-head-callback' ) )
+		return;
+
+	$output = '';
+
+	$header_image = get_header_image();
+	$text_color   = get_header_textcolor();
+
+	// If no options set, don't waste the output. Do nothing.
+	if ( empty( $header_image ) && ! display_header_text() && $text_color === get_theme_support( 'custom-header', 'default-text-color' ) )
+		return;
+
+	$header_selector = get_theme_support( 'custom-header', 'header-selector' );
+	$title_selector  = genesis_html5() ? '.custom-header .site-title'       : '.custom-header #title';
+	$desc_selector   = genesis_html5() ? '.custom-header .site-description' : '.custom-header #description';
+
+	// Header selector fallback.
+	if ( ! $header_selector )
+		$header_selector = genesis_html5() ? '.custom-header .site-header' : '.custom-header #header';
+
+	// Header image CSS, if exists.
+	if ( $header_image )
+		$output .= sprintf( '%s { background-image: url(%s); background-repeat: no-repeat; background-size: contain; }', $header_selector, esc_url( $header_image ) );
+
+	// Header text color CSS, if showing text.
+	if ( display_header_text() && $text_color !== get_theme_support( 'custom-header', 'default-text-color' ) )
+		$output .= sprintf( '%2$s a, %2$s a:hover, %3$s { color: #%1$s; }', esc_html( $text_color ), esc_html( $title_selector ), esc_html( $desc_selector ) );
+
+	if ( $output )
+		printf( '<style type="text/css">%s</style>' . "\n", $output );
+
+}
 
 }
