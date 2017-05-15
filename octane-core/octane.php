@@ -18,7 +18,7 @@ class High_Octane {
     add_action( 'after_setup_theme', array( $this ,'octane_setup' ) );
     add_action( 'widgets_init', array( $this, 'octane_widgets_init' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'octane_scripts' ) );
-    add_action( 'wp_head', 'octane_custom_header_style' );
+    add_action( 'wp_head', array( $this, 'octane_custom_header_style' ) );
 
     //filters
     add_filter( 'script_loader_src', array( $this, '_remove_script_version' ), 15, 1 );
@@ -97,9 +97,14 @@ class High_Octane {
       //* Add support for custom header
       add_theme_support( 'custom-header', array(
           'header-selector' => '.site-title a',
-          'header-text'     => false,
-          'height'          => 111,
-          'width'           => 340
+          'header-text'     => false
+      ) );
+
+      add_theme_support( 'custom_logo', array(
+          'height'      => 175,
+          'width'       => 400,
+          'flex-width'  => true,
+          'flex-height' => true
       ) );
 
 //* Add support for custom background
