@@ -7,9 +7,12 @@ class High_Octane {
 
   public function init() {
 
+    //remove the default genesis load styles function
+    remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+
     remove_action( 'wp_head', 'wp_print_scripts' );
-		remove_action( 'wp_head', 'wp_print_head_scripts', 9 );
-		remove_action( 'wp_head', 'wp_enqueue_scripts', 1 );
+    remove_action( 'wp_head', 'wp_print_head_scripts', 9 );
+    remove_action( 'wp_head', 'wp_enqueue_scripts', 1 );
     add_action( 'genesis_after', 'wp_print_scripts' );
     add_action( 'genesis_after', 'wp_print_head_scripts', 9);
     add_action( 'genesis_after', 'wp_enqueue_scripts', 1 );
@@ -110,7 +113,7 @@ class High_Octane {
 //* Add support for structural wraps
       add_theme_support( 'genesis-structural-wraps', array(
           'header',
-          'nav',
+        //   'nav',
           'subnav',
           'site-inner',
           'footer-widgets',
@@ -157,20 +160,14 @@ class High_Octane {
   
 
   function octane_scripts() {
-      if( !is_admin()){
-          wp_deregister_script('jquery');
-          wp_deregister_script('jquery-migrate');
-          wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"), false, '1.3.2', false);
-          wp_register_script('jquery-migrate', get_site_url().'/wp-includes/js/jquery/jquery-migrate.js', false, '1.10.2', true);
-          wp_enqueue_script('jquery');
-      }
+      
       wp_enqueue_script( 'octane-scripts', get_stylesheet_directory_uri(). '/js/octane.js', array( 'jquery'), '1.0', true);
 
       wp_enqueue_style( 'dashicons' );
 
-      wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans', array(), CHILD_THEME_VERSION );
+      wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i', array(), CHILD_THEME_VERSION );
 
-      wp_enqueue_style( 'octane-styles', get_stylesheet_directory_uri() . '/style.css', array(), CHILD_THEME_VERSION );
+      wp_enqueue_style( 'octane-styles', get_stylesheet_directory_uri() . '/css/style.css', array(), CHILD_THEME_VERSION );
 
   }
 

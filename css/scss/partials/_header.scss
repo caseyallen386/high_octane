@@ -1,46 +1,31 @@
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */
-
 .site-header {
-	background-color: #fff;
-	min-height: 160px;
+	background-color: rgba(0,0,0,0);
+	position: absolute;
+	width: 100%; 
 }
 
-.site-header .wrap {
-	padding: 40px 0;
-}
 
 /* ## Title Area
 --------------------------------------------- */
 
-.title-area {
-	float: left;
-	padding: 10px 0;
-	width: 360px;
-}
-
-.header-full-width .title-area {
-	width: 100%;
-}
 
 .site-title {
-	font-size: 32px;
-	font-size: 3.2rem;
-	font-weight: 400;
+	font-size: 25px;
+	font-size: 2.5rem;
+	font-weight: 700;
 	line-height: 1.2;
 }
 
 .site-title a,
 .site-title a:hover,
 .site-title a:focus {
-	color: #333;
+	color: inherit;
 }
 
 .header-image .site-title > a {
-	background: url(images/logo.png) no-repeat left;
-	float: left;
-	min-height: 60px;
-	width: 100%;
+	background: url(/images/logo.png) no-repeat left;
 }
 
 .site-description {
@@ -48,6 +33,7 @@
 	font-size: 1.6rem;
 	font-weight: 300;
 	line-height: 1.5;
+	display: none;
 }
 
 .site-description,
@@ -61,22 +47,9 @@
 	text-indent: -9999px;
 }
 
-/* ## Widget Area
---------------------------------------------- */
-
-.site-header .widget-area {
-	float: right;
-	text-align: right;
-	width: 800px;
-}
 
 .search-form {
 	overflow: hidden;
-}
-
-.site-header .search-form {
-	float: right;
-	margin-top: 12px;
 }
 
 .entry-content .search-form,
@@ -95,8 +68,130 @@
 	width: 1px;
 }
 
-@include media-breakpoint-up(xs) {  }
-@include media-breakpoint-up(sm) {  }
-@include media-breakpoint-up(md) {  }
-@include media-breakpoint-up(lg) {  }
-@include media-breakpoint-up(xl) {  }
+
+@media only screen and (min-width: 320px) {
+	.site-header .wrap {
+		padding: 40px 0;
+	}
+	
+	/* ## Title Area
+	--------------------------------------------- */
+	
+	.title-area {
+		text-align: center;
+		padding: 10px 0;
+		width: 100%;
+	}
+	
+	.site-title {
+		font-size: 32px;
+		font-size: 3.2rem;
+		font-weight: 400;
+		line-height: 1.2;
+	}
+	
+	
+	.header-image .site-title > a {
+		min-height: 60px;
+		width: 100%;
+	}
+	
+		
+	.site-description,
+	.site-title {
+		margin-bottom: 30px;
+	}
+	
+	.header-image .site-description,
+	.header-image .site-title {
+		display: block;
+		text-indent: -9999px;
+	}
+	
+	/* ## Widget Area
+	--------------------------------------------- */
+	
+	.site-header .widget-area {
+		text-align: center;
+	}
+	
+	.search-form {
+		overflow: hidden;
+	}
+	
+	.site-header .search-form {
+		margin-top: 12px;
+	}
+	
+}
+
+@media only screen and (min-width: 1024px) {
+	.site-header {
+		min-height: 60px;
+	}
+	
+	/* ## Title Area
+	--------------------------------------------- */
+	
+	.title-area {
+		float: left;
+		padding: 12px 0;
+	}
+	
+	.header-full-width .title-area {
+		width: 100%;
+	}
+	
+	.site-title {
+		font-size: 25px;
+		font-size: 2.5rem;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+	
+	.site-title a,
+	.site-title a:hover,
+	.site-title a:focus {
+		color: inherit;
+	}
+	
+	.header-image .site-title > a {
+		float: left;
+		min-height: 60px;
+		width: 100%;
+	}
+	
+	
+	.site-description,
+	.site-title {
+		margin-bottom: 0;
+	}
+	
+	.header-image .site-description,
+	.header-image .site-title {
+		display: block;
+		text-indent: -9999px;
+	}
+	
+	/* ## Widget Area
+	--------------------------------------------- */
+	
+	.site-header .widget-area {
+		float: right;
+		text-align: right;
+	}
+	
+	.search-form {
+		overflow: hidden;
+	}
+	
+	.site-header .search-form {
+		float: right;
+		margin-top: 12px;
+	}
+	
+	.entry-content .search-form,
+	.site-header .search-form {
+		width: 50%;
+	}
+}
